@@ -23,13 +23,16 @@ Create some separate components and try to simply include them
 
 ## CSS
 Refrain from adding CSS classes
+
 CSS means merge conflicts and merge conflicts - BAD
 
 Instead use bootstrap for everything
+
 Don't write components on your own, just plug and play from the component library
 
 ## ICONS
 Google material icons
+
 Please for the love of lord only use this.
 
 ## JS DBs rendering

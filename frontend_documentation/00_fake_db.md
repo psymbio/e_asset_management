@@ -9,39 +9,47 @@ user:
 5. email
 6. username
 7. password
-8. bannedTill - calculation for the user banningStatus
 
-userLoginInformation:
+userLoginInfo:
 1. userId
 2. lastLoginDatetime (Last Logged in date times)
-
-asset:
-1. name
-2. categoryId
-3. description
-4. dateAdded
-5. isAvailable - if taken by a user this is false
-
-category:
-1. id
-2. categoryName
-3. lendingPeriod
-4. lateFees
-5. banningPeriod
-
-borrowedAsset:
-1. id
-2. assetId
-3. borrowingDatetime
-4. overdueStatus - calculation of whether the time has elapsed for the specific category so that the product is overdue or not - in the backend this shall be a CallableFunction
-5. dueDate - calculation of when is the date the asset needs to be returned (borrowingDatetime + assetId.categoryId.lendingPeriod)
-6. userId
-7. lateFees - calculation of the amount needed to be paid
 
 userInbox:
 1. userId
 2. message
 3. statusRead (whether the message is read or not)
+
+userBannedTill
+1. userId
+2. bannedTill - calculation for the user banningStatus
+
+role:
+1. id
+2. name (Admin/manager)
+
+asset:
+1. id
+2. name
+3. categoryId
+4. description
+5. dateAdded
+6. isAvailable - if taken by a user this is false
+
+category:
+1. id
+2. name
+3. lendingPeriod
+4. lateFeesPerDay
+5. banningPeriod
+
+borrowedAsset:
+1. id
+2. assetId
+3. userId
+4. borrowingDatetime: the current datetime of the asset being borrowed.
+5. overdueStatus - calculation of whether the time has elapsed for the specific category so that the product is overdue or not - in the backend this shall be a CallableFunction
+6. dueDate - calculation of when is the date the asset needs to be returned (borrowingDatetime + assetId.categoryId.lendingPeriod)
+7. lateFees - calculation of the amount needed to be paid (0 if currentDate < dueDate else )
 
 basically all assets when taken end up here, but have a status for overdue or not
 we need to decide the properties of this.
