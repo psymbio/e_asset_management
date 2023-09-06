@@ -17,9 +17,9 @@
     },
     {
         "id": 3,
-        "name": "Tablet",
-        "categoryId": 1,
-        "description": "iPad Pro",
+        "name": "Nokia 9300",
+        "categoryId": 3,
+        "description": "Nice keypad",
         "dateAdded": "2023-09-03",
         "isAvailable": false
     },

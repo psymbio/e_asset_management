@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "assetId": 1,
+        "userId": 1,
+        "borrowingDatetime": "2023-09-06T10:30:00Z",
+        "overdueStatus": false,
+        "dueDate": "2023-09-16T10:30:00Z",
+        "lateFees": 0
+    },
+    {
+        "id": 2,
+        "assetId": 2,
+        "userId": 2,
+        "borrowingDatetime": "2023-09-05T15:45:00Z",
+        "overdueStatus": true,
+        "dueDate": "2023-09-12T15:45:00Z",
+        "lateFees": 100
+    },
+    {
+        "id": 3,
+        "assetId": 3,
+        "userId": 3,
+        "borrowingDatetime": "2023-09-03T09:15:00Z",
+        "overdueStatus": false,
+        "dueDate": "2023-09-18T09:15:00Z",
+        "lateFees": 0
+    },
+    {
+        "id": 4,
+        "assetId": 4,
+        "userId": 4,
+        "borrowingDatetime": "2023-09-04T18:20:00Z",
+        "overdueStatus": true,
+        "dueDate": "2023-09-14T18:20:00Z",
+        "lateFees": 75
+    }
+]

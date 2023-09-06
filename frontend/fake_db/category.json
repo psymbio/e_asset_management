@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "lendingPeriod": 10,
+        "lateFeesPerDay": 100,
+        "banningPeriod": 14
+    },
+    {
+        "id": 2,
+        "name": "Books",
+        "lendingPeriod": 7,
+        "lateFeesPerDay": 15,
+        "banningPeriod": 0
+    },
+    {
+        "id": 3,
+        "name": "Mobile",
+        "lendingPeriod": 15,
+        "lateFeesPerDay": 75,
+        "banningPeriod": 10
+    }
+]
