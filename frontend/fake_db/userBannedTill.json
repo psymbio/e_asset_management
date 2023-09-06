@@ -1,0 +1,18 @@
+[
+    {
+        "userId": 1,
+        "bannedTill": null
+    },
+    {
+        "userId": 2,
+        "bannedTill": "2023-09-10"
+    },
+    {
+        "userId": 3,
+        "bannedTill": null
+    },
+    {
+        "userId": 4,
+        "bannedTill": "2023-09-15"
+    }
+]

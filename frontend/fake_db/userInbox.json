@@ -1,0 +1,32 @@
+[
+    {
+        "userId": 1,
+        "message": "Hello, John! Your account has been upgraded to an admin role.",
+        "statusRead": true
+    },
+    {
+        "userId": 1,
+        "message": "You have a new message from Jane.",
+        "statusRead": false
+    },
+    {
+        "userId": 2,
+        "message": "Welcome to our platform, Jane!",
+        "statusRead": true
+    },
+    {
+        "userId": 2,
+        "message": "Important update: Please review your account settings.",
+        "statusRead": false
+    },
+    {
+        "userId": 3,
+        "message": "Admin User, your account has been created.",
+        "statusRead": true
+    },
+    {
+        "userId": 4,
+        "message": "User One, check out our latest features.",
+        "statusRead": false
+    }
+]

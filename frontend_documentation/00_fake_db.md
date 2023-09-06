@@ -4,7 +4,7 @@ Populate these dbs using ChatGPT
 user:
 1. id
 2. name
-3. roleId - (1 for admin, 2 for user) - probably a dropdown
+3. role (Admin, Employee)
 4. telephone 
 5. email
 6. username
@@ -22,10 +22,6 @@ userInbox:
 userBannedTill
 1. userId
 2. bannedTill - calculation for the user banningStatus
-
-role:
-1. id
-2. name (Admin/manager)
 
 asset:
 1. id

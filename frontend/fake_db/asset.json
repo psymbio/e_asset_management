@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop 37819",
+        "categoryId": 1,
+        "description": "Dell XPS 15",
+        "dateAdded": "2023-09-01",
+        "isAvailable": true
+    },
+    {
+        "id": 2,
+        "name": "The Lighthouse",
+        "categoryId": 2,
+        "description": "An amazing book by Virginia Woolf",
+        "dateAdded": "2023-09-02",
+        "isAvailable": true
+    },
+    {
+        "id": 3,
+        "name": "Tablet",
+        "categoryId": 1,
+        "description": "iPad Pro",
+        "dateAdded": "2023-09-03",
+        "isAvailable": false
+    },
+    {
+        "id": 4,
+        "name": "Laptop 37827",
+        "categoryId": 1,
+        "description": "Dell XPS 15",
+        "dateAdded": "2023-09-01",
+        "isAvailable": false
+    }
+]
