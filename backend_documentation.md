@@ -49,9 +49,9 @@
 ## ASSETSTORAGEIMPL.JAVA
 
 ## BORROWEDASSETSTORAGE.JAVA (IMPL)
-- Boolean addNewBorrowedAsset(int userId, int assetId)
-- Boolean removeBorrowedAsset(int id) [here we pass in the id of the entry on the borrowedAsset table that is needed to be removed]
-- List<BorrowedAsset> getBorrowedAsset() - [I was thinking of adding a lambda function filter here for getting it for all users (ADMIN) and for one user (BORROWER)]
+- Boolean addBorrowedAsset(int userId, int assetId)
+- Boolean removeBorrowedAsset(int userId, int assetId) [here we pass in the id of the entry on the borrowedAsset table that is needed to be removed]
+- List<BorrowedAsset> getAllBorrowedAssets() - [I was thinking of adding a lambda function filter here for getting it for all users (ADMIN) and for one user (BORROWER)]
 <!-- - Asset getBorrowedAssetDetails(int assetId) -->
 
 ## BORROWEDASSETIMPL.JAVA
@@ -67,42 +67,51 @@
 
 ## USERSERVICE.JAVA (INTERFACE)
 - boolean addUser(User u) throws UserAlreadyExistsException
-- User getUserDetails(int empId) throws UserNotFoundException
+- User getUser(int userId) throws UserNotFoundException
 - List<User> getAllUsers() [CHANGE: if there are no users in db it's not an exception, rather if length is 0 we just give a message saying no users registered.]
 - int bannedTill(int userId) throws UserNotFoundException [calculates the bannedTill date and then calculate the number of days the user is banned till]
-- Boolean borrowAsset(int userId, int assetId) throws AssetNotFoundException, UserBannedTill
+
+[THESE TWO FUNCTIONALITIES ARE MOVED TO BORROWEDASSET]
+<!-- - Boolean borrowAsset(int userId, int assetId) throws AssetNotFoundException, UserBannedException
 [this only happens after successful login, therefore userId exists]
 [TODO: should we handle AssetNotAvailableException in the cases where an asset exists but is acquired by someone else]
 [if any of these exceptions occur the borrowAsset fails]
 
 [if borrowAsset passes we need to call the updateAsset function to update the Asset's isAvailable to false].
 
-- Boolean returnAsset(int userId, int assetId) throws 
-[The user enters the assetId, and we know after login what his userId is. Then in the borrowedAsset table we remove the entry where the assetId and userId match from the borrowedAssetTable after the late fees is paid]
+- Boolean returnAsset(int userId, int assetId);
+[The user enters the assetId, and we know after login what his userId is. Then in the borrowedAsset table we remove the entry where the assetId and userId match from the borrowedAssetTable after the late fees is paid] -->
 
 ## USERSERVICEIMPL.JAVA
 
 ## ASSETSERVICE.JAVA (INTERFACE)
-- Boolean addNewAsset(Asset a) throws AssetAlreadyExistsException
-- Asset findAssetDetails(int assetId) throws AssetNotFoundException
-- List<Asset> getAllAssets() throws AssetNotFoundException
-<!-- - Boolean isAvailable(int assetId) --> [CHANGE: doesn't need to exist as it is assetId locate asset and then asset.getId()]
-- Float calculateLateFees(int userId)
+- Boolean addAsset(Asset a) throws AssetAlreadyExistsException
+- Asset getAsset(int assetId) throws AssetNotFoundException
+- List<Asset> getAllAssets();
+<!-- - Boolean isAvailable(int assetId) --> [CHANGE: doesn't need to exist as assetFinder is implemented to filter, or if you have id you can always find the object getAsset and check]
+- List<Asset> filterAssets(AssetFinder af);
+- Float calculateLateFees(int userId, int assetId)
 [CHANGE: we don't find the aggregate instead the user separately pays the lateFees of each acquired asset]
 
 ## ASSETSERVICEIMPL.JAVA
 
 ## BORROWEDASSETSERVICE.JAVA (INTERFACE)
-- Boolean addNewBorrowedAsset(Asset a)
-- Boolean removeAsset(Asset a)
-- Asset getAssetDetails(int id)
-- Float calculateLateFees(Asset a)
-- Boolean isOverdue(Asset a)
+- Boolean borrowAsset(int userId, int assetId) throws AssetNotFoundException, UserBannedException
+[this only happens after successful login, therefore userId exists]
+[TODO: should we handle AssetNotAvailableException in the cases where an asset exists but is acquired by someone else]
+[if any of these exceptions occur the borrowAsset fails]
+[if borrowAsset passes we need to call the updateAsset function to update the Asset's isAvailable to false].
+- Boolean removeBorrowedAsset(int userId, int assetId);
+[The user enters the assetId, and we know after login what his userId is. Then in the borrowedAsset table we remove the entry where the assetId and userId match from the borrowedAssetTable after the late fees is paid]
+- List<BorrowedAssets> getAllBorrowedAssets();
+- List<BorrowedAssets> filterBorrowedAssets(BorrowedAssetsFinder baf);
+- Float calculateLateFees(int assetId)
+- Boolean isOverdue(int assetId)
 
 # CATEGORYSERVICE.JAVA (INTERFACE)
-- Int addNewCategory(Category c) throws CategoryAlreadyExistsException
-- List<Category> getAllCategories() [CHANGE: if there are no categories in db it's not an exception, rather if length is 0 we just give a message saying no categories registered.]
-- Category findCategory(int categoryId) throws CategoryNotFoundException
+public boolean addCategory(Category c) throws CategoryAlreadyExistsException;
+public Category getCategory(int assetId) throws CategoryNotFoundException;
+public List<Category> getAllCategories();
 
 ## CATEGORYSERVICEIMPL.JAVA
 
@@ -114,7 +123,8 @@
 - CategoryAlreadyExistsException
 - CategoryNotFoundException
 
-- UserBannedTill (the user cannot acquire any assets if they are banned)
+- UserBannedException (the user cannot acquire any assets if they are banned)
+[the reason AssetNotAvailable does not exist is because we never show the user any already taken assets]
 
 # FDP
 - Object getInstance(int choice)
