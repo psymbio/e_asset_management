@@ -3,7 +3,7 @@ CREATE DATABASE eassetdb;
 USE eassetdb;
 -- Create the USER table
 CREATE TABLE USER (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255),
     role VARCHAR(10) CHECK (role IN ('Admin', 'Borrower')),
     telephone VARCHAR(255),
@@ -14,7 +14,7 @@ CREATE TABLE USER (
 
 -- Create the CATEGORY table
 CREATE TABLE CATEGORY (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255),
     lendingPeriod INT,
     lateFeesPerDay FLOAT,
@@ -23,7 +23,7 @@ CREATE TABLE CATEGORY (
 
 -- Create the ASSET table
 CREATE TABLE ASSET (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255),
     categoryId INT,
     description VARCHAR(255),
@@ -34,6 +34,7 @@ CREATE TABLE ASSET (
 
 -- Create the BORROWEDASSET table
 CREATE TABLE BORROWEDASSET (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     assetId INT,
     userId INT,
     borrowingDate DATE,
@@ -64,9 +65,9 @@ VALUES
     (3, 'Book - The Great Gatsby', 2, 'Classic novel', '2023-09-07', FALSE);
 
 -- Insert data into the BORROWEDASSET table
-INSERT INTO BORROWEDASSET (assetId, userId, borrowingDate)
+INSERT INTO BORROWEDASSET (id, assetId, userId, borrowingDate)
 VALUES
-    (1, 2, '2023-09-08'),
-    (3, 1, '2023-09-10');
+    (1, 1, 2, '2023-09-08'),
+    (2, 3, 1, '2023-09-10');
 
 SELECT * FROM BORROWEDASSET;
