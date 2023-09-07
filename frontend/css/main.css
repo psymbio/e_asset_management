@@ -1,0 +1,25 @@
+thead tr th {
+  white-space: nowrap;
+  padding: 1rem 1rem;
+  font-weight: normal;
+  color: #111827;
+  background-color: #f3f4f6;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Apply styles to the table body */
+tbody tr td {
+  white-space: nowrap;
+  padding: 0.875rem 1rem;
+  color: #4b5563;
+}
+
+/* Alternate row colors */
+tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #edf2f7;
+}
