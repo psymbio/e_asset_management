@@ -1,8 +1,8 @@
 import borrowedAssetData from "../fake_db/borrowedAsset.json" assert { type: "json" };
-import assetData from "../fake_db/asset.json" assert { type: "json" };
-import userData from "../fake_db/user.json" assert { type: "json" };
 import categoryData from "../fake_db/category.json" assert { type: "json" };
-import formatDate from "../scripts/utils.js";
+import userInboxData from "../fake_db/userInbox.json" assert { type: "json" };
+import {formatDate, formatDate2} from "./utils.js";
+import { getUsername, getUserName, getAssetName, getAssetCategory } from "./getdatautils.js";
 
 function filterTable() {
   const categoryFilter = categoryInput.value.toLowerCase();
@@ -25,13 +25,18 @@ function filterTable() {
       const overdueStatus = cells[5].textContent;
       const dueDate = cells[6].textContent;
       const lateFees = cells[7].textContent;
-      console.log(userName, username);
+      // console.log(dueDateFilter, dueDate);
+
+      const dueDateFilterFormatted = formatDate2(dueDateFilter);
+      const borrowingDateFilterFormatted = formatDate2(borrowingDateFilter);
+      console.log(dueDateFilter, dueDateFilterFormatted);
+
       const showRow = (
             userName.toLowerCase().includes(usernameFilter) &&
             assetName.toLowerCase().includes(assetFilter) &&
             assetCategory.toLowerCase().includes(categoryFilter) &&
-            (dueDateFilter === "" || dueDate === dueDateFilter) &&
-            (borrowingDateFilter === "" || borrowingDate === borrowingDateFilter) &&
+            (dueDateFilter === "" || dueDate === dueDateFilterFormatted) &&
+            (borrowingDateFilter=== "" || borrowingDate === borrowingDateFilterFormatted) &&
             (categorySelectFilter === "" || assetCategory.toLowerCase() === categorySelectFilter)
           );
           row.style.display = showRow ? "" : "none";
@@ -40,6 +45,7 @@ function filterTable() {
 }
 
 const filterForm = document.createElement("form");
+filterForm.setAttribute("id", "filterForm");
 
 // Filter by category name
 const categoryInput = document.createElement("input");
@@ -89,32 +95,7 @@ categorySelect.addEventListener("change", filterTable);
 filterForm.appendChild(categorySelect);
 
 // Add filter form to the HTML document
-document.body.appendChild(filterForm);
-
-// Create a function to get the username based on userId
-function getUsername(userId) {
-  const user = userData.find((user) => user.id === userId);
-  return user ? user.username : "Unknown User";
-}
-
-function getUserName(userId) {
-    const user = userData.find((user) => user.id === userId);
-    return user ? user.name : "Unknown User";
-}
-
-function getAssetName(assetId) {
-    const asset = assetData.find((asset) => asset.id === assetId);
-    return asset ? asset.name : "Unknown Asset";
-}
-
-function getAssetCategory(assetId) {
-    const asset = assetData.find((asset) => asset.id === assetId);
-    if (asset) {
-        const category = categoryData.find((category) => category.id === asset.categoryId);
-        return category ? category.name : "Unknown Category";
-    }
-    return "Unknown Asset";
-}
+// document.body.appendChild(filterForm);
 
 // Create a table for borrowed assets and populate it with data
 const table = document.createElement("table");
@@ -129,7 +110,9 @@ const headers = [
 "Borrowing Date",
 "Overdue Status",
 "Due Date",
-"Late Fees"
+"Late Fees",
+"Send Message",
+"",
 ];
 const headerRow = document.createElement("tr");
 
@@ -160,14 +143,43 @@ borrowedAssetData.forEach((borrowedAsset) => {
     borrowedAsset.overdueStatus ? "Overdue" : "Not Overdue",
     formatDate(borrowedAsset.dueDate),
     borrowedAsset.lateFees,
+    "", // Empty cell for the text input
+    "", // Empty cell for the "Send" button
   ];
 
-  cells.forEach((cellData) => {
-    if (cells[5] == "Overdue") {
-      const cell = document.createElement("td");
+  cells.forEach((cellData, index) => {
+    const cell = document.createElement(index < 8 ? "td" : "div");
+    if (index < 8) {
       cell.textContent = cellData;
-      row.appendChild(cell);
+    } else if (index === 8) {
+      // Create a text input for the "Send Message" column
+      const textInput = document.createElement("input");
+      textInput.setAttribute("class", "adminMessageInput");
+      textInput.type = "text";
+      cell.appendChild(textInput);
+    } else if (index === 9) {
+      // Create a button for the empty column
+      const sendButton = document.createElement("button");
+      sendButton.textContent = "Send";
+      sendButton.addEventListener("click", () => {
+        // Find the text input in the same row as the clicked button
+        const textInput = row.querySelector(".adminMessageInput");
+        const message = textInput.value;
+        // console.log(message);
+        // Update userInboxData
+        userInboxData.push({
+          userId: borrowedAsset.userId,
+          message,
+          statusRead: false,
+        });
+        window.localStorage.setItem("userInboxData", JSON.stringify(userInboxData));
+        alert("Message sent to " + getUserName(borrowedAsset.userId));
+        // Clear the input field
+        textInput.value = "";
+      });
+      cell.appendChild(sendButton);
     }
+    row.appendChild(cell);
   });
 
   tableBody.appendChild(row);
@@ -177,6 +189,8 @@ borrowedAssetData.forEach((borrowedAsset) => {
 table.appendChild(tableBody);
 
 // Add the table to the HTML document
-document.body.appendChild(table);
-
+const filterFormDiv = document.getElementById("filterForm");
+filterFormDiv.appendChild(filterForm);
+const overdueTableDiv = document.getElementById("overdueTable");
+overdueTableDiv.appendChild(table);
 filterTable();

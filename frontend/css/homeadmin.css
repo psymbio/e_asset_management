@@ -1,0 +1,16 @@
+#filterForm {
+    padding: 1rem;
+}
+
+#overdueStatus {
+    padding: 2rem;
+}
+
+#adminMessage {
+    height: 4rem;
+    width: 7rem;
+}
+
+#barChart {
+    height: 60% !important;
+}

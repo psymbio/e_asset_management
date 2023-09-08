@@ -2,7 +2,7 @@
 2. List of borrowed items and their dueDate, lateFees for the item
 3. Checkbox to return a specific item
 4. If the item has a lateFees it needs to be added and paid to be returned
-5. Display admin messages to the user (userInbox)
+5. Display admin messages to the user (userInbox) - check if the key "userInboxData" exists in the localStorage otherwise take the inbox data from fake_db, if empty print "No messages received!".
 7. Asset allocation: UI to search different assets and allocate it to themselves - (we need to check if the current user is banned)
 	1. employee can borrow multiple assets
 	2. employee can borrow only one asset of one category

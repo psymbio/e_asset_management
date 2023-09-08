@@ -1,0 +1,1 @@
+In all the js files we need to add the feature that we check if the key userData/borrowedAssetsData/etc. exists in the localStorage if they do then we overwrite the imported fake_db variable with the one in the localStorage.

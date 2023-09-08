@@ -1,6 +1,6 @@
 thead tr th {
   white-space: nowrap;
-  padding: 1rem 1rem;
+  padding: 0.2rem 0.2rem;
   font-weight: normal;
   color: #111827;
   background-color: #f3f4f6;
@@ -10,7 +10,7 @@ thead tr th {
 /* Apply styles to the table body */
 tbody tr td {
   white-space: nowrap;
-  padding: 0.875rem 1rem;
+  padding: 0.2rem 0.2rem;
   color: #4b5563;
 }
 
