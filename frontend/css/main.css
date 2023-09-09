@@ -1,17 +1,21 @@
+/* Style for table headers */
 thead tr th {
   white-space: nowrap;
-  padding: 0.2rem 0.2rem;
+  padding: 0.5rem;
   font-weight: normal;
+  font-size: 14px;
   color: #111827;
   background-color: #f3f4f6;
   border-bottom: 2px solid #e5e7eb;
+  text-align: left;
 }
 
-/* Apply styles to the table body */
+/* Style for table body */
 tbody tr td {
   white-space: nowrap;
-  padding: 0.2rem 0.2rem;
+  padding: 0.5rem;
   color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 /* Alternate row colors */
@@ -22,4 +26,64 @@ tbody tr:nth-child(even) {
 /* Hover effect for rows */
 tbody tr:hover {
   background-color: #edf2f7;
+}
+
+/* Add a border to the last row to separate it from the rest of the content */
+tbody tr:last-child {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Style the table itself */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  table-layout: fixed;
+  /* Ensure even distribution of column space */
+}
+
+/* Style table cell borders */
+td,
+th {
+  border: 1px solid #e5e7eb;
+}
+
+/* Add some spacing around the table */
+.table-container {
+  overflow-x: auto;
+  max-width: 90%;
+  margin: 20px 0;
+}
+
+/* Center-align the table */
+.table-container {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100%;
+  /* Fill the container's height */
+}
+
+/* Apply styles to the table itself */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  /* Ensure even distribution of column space */
+}
+
+/* Style table cell borders */
+td,
+th {
+  border: 1px solid #e5e7eb;
+}
+
+/* Add some spacing around the table */
+.table-container table {
+  max-width: 90%;
+  margin: 20px 0;
 }

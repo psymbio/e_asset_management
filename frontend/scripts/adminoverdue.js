@@ -1,7 +1,7 @@
 import borrowedAssetData from "../fake_db/borrowedAsset.json" assert { type: "json" };
 import categoryData from "../fake_db/category.json" assert { type: "json" };
 import userInboxData from "../fake_db/userInbox.json" assert { type: "json" };
-import {formatDate, formatDate2} from "./utils.js";
+import { formatDate, formatDate2 } from "./utils.js";
 import { getUsername, getUserName, getAssetName, getAssetCategory } from "./getdatautils.js";
 
 function filterTable() {
@@ -32,14 +32,14 @@ function filterTable() {
       console.log(dueDateFilter, dueDateFilterFormatted);
 
       const showRow = (
-            userName.toLowerCase().includes(usernameFilter) &&
-            assetName.toLowerCase().includes(assetFilter) &&
-            assetCategory.toLowerCase().includes(categoryFilter) &&
-            (dueDateFilter === "" || dueDate === dueDateFilterFormatted) &&
-            (borrowingDateFilter=== "" || borrowingDate === borrowingDateFilterFormatted) &&
-            (categorySelectFilter === "" || assetCategory.toLowerCase() === categorySelectFilter)
-          );
-          row.style.display = showRow ? "" : "none";
+        userName.toLowerCase().includes(usernameFilter) &&
+        assetName.toLowerCase().includes(assetFilter) &&
+        assetCategory.toLowerCase().includes(categoryFilter) &&
+        (dueDateFilter === "" || dueDate === dueDateFilterFormatted) &&
+        (borrowingDateFilter === "" || borrowingDate === borrowingDateFilterFormatted) &&
+        (categorySelectFilter === "" || assetCategory.toLowerCase() === categorySelectFilter)
+      );
+      row.style.display = showRow ? "" : "none";
     }
   });
 }
@@ -103,16 +103,16 @@ const tableBody = document.createElement("tbody");
 
 // Create table headers
 const headers = [
-"User Username",
-"User Name",
-"Asset Name",
-"Asset Category",
-"Borrowing Date",
-"Overdue Status",
-"Due Date",
-"Late Fees",
-"Send Message",
-"",
+  "User Username",
+  "User Name",
+  "Asset Name",
+  "Asset Category",
+  "Borrowing Date",
+  "Overdue Status",
+  "Due Date",
+  "Late Fees",
+  "Send Message",
+  "",
 ];
 const headerRow = document.createElement("tr");
 
