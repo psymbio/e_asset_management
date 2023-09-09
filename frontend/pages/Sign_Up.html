@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+      <div
+        class="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0"
+      >
+        <!-- left side -->
+        <div class="flex flex-col justify-center p-8 md:p-14">
+          <span class="mb-3 text-4xl font-bold">Welcome back</span>
+          <span class="font-light text-gray-400 mb-8">
+            Welcom back! Please enter your details
+          </span>
+          <div class="py-4">
+            <span class="mb-2 text-md">Email</span>
+            <input
+              type="text"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div class="py-4">
+            <span class="mb-2 text-md">Password</span>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+
+          <div class="py-4">
+            <span class="mb-2 text-md">Confirm Password</span>
+            <input
+              type="password"
+              name="confirm_pass"
+              id="confirm_pass"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+          <div class="py-4">
+            <span class="mb-2 text-md">Username</span>
+            <input
+              type="text"
+              name="Username"
+              id="Username"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+
+          
+          <div class="mb-4">
+            <label for="roleId" class="block text-gray-700 font-semibold mb-2">Role:</label>
+            <select id="roleId" name="roleId" required class="w-full p-3 border rounded focus:outline-none focus:border-blue-500">
+                <option value="1">Admin</option>
+                <option value="2">User</option>
+            </select>
+        </div>
+
+
+          <div class="py-4">
+            <span class="mb-2 text-md">Phone no.</span>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+            />
+          </div>
+
+            
+
+          <button
+            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
+          >
+            <img src="google.svg" alt="img" class="w-6 h-6 inline mr-2" />
+            Sign in with Google
+          </button>
+          <div class="text-center text-gray-400">
+            Already have an account?
+            <span class="font-bold text-black">Login</span>
+          </div>
+        </div>
+        <!-- {/* right side */} -->
+        <div class="relative">
+          <img
+            src="image.jpg"
+            alt="img"
+            class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover"
+          />
+          <!-- text on image  -->
+          <div
+            class="absolute hidden bottom-10 right-6 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:block"
+          >
+            <span class="text-white text-xl"
+              >We've been uesing Untitle to kick"<br />start every new project
+              and can't <br />imagine working without it."
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
