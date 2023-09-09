@@ -34,5 +34,14 @@
         "overdueStatus": true,
         "dueDate": "2023-09-14",
         "lateFees": 75
+    },
+    {
+        "id": 5,
+        "assetId": 1,
+        "userId": 1,
+        "borrowingDatetime": "2023-09-09",
+        "overdueStatus": false,
+        "dueDate": "2023-09-19",
+        "lateFees": 0
     }
 ]
