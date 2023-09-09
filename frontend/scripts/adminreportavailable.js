@@ -1,21 +1,4 @@
-let borrowedAssetData;
-
-if (localStorage.getItem('borrowedAssetData')) {
-  borrowedAssetData = JSON.parse(localStorage.getItem('borrowedAssetData'));
-} else {
-  // Fetch the JSON file using a fetch request
-  fetch('../fake_db/borrowedAsset.json')
-    .then(response => response.json())
-    .then(data => {
-      borrowedAssetData = data;
-      localStorage.setItem('borrowedAssetData', JSON.stringify(borrowedAssetData));
-      console.log(borrowedAssetData);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}
-
+let borrowedAssetData = JSON.parse(localStorage.getItem("borrowedAssetData"));
 import { getAssetIsAvailable } from "./getdatautils.js";
 
 

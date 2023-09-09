@@ -1,6 +1,7 @@
-import borrowedAssetData from "../fake_db/borrowedAsset.json" assert { type: "json" };
-import categoryData from "../fake_db/category.json" assert { type: "json" };
-import userInboxData from "../fake_db/userInbox.json" assert { type: "json" };
+let borrowedAssetData = JSON.parse(localStorage.getItem("borrowedAssetData"));
+let categoryData = JSON.parse(localStorage.getItem("categoryData"));
+let userInboxData = JSON.parse(localStorage.getItem("userInboxData"));
+
 import { formatDate, formatDate2 } from "./utils.js";
 import { getUsername, getUserName, getAssetName, getAssetCategory } from "./getdatautils.js";
 
