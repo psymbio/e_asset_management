@@ -112,7 +112,6 @@ const headers = [
   "Due Date",
   "Late Fees",
   "Send Message",
-  "",
 ];
 const headerRow = document.createElement("tr");
 
@@ -144,7 +143,6 @@ borrowedAssetData.forEach((borrowedAsset) => {
     formatDate(borrowedAsset.dueDate),
     borrowedAsset.lateFees,
     "", // Empty cell for the text input
-    "", // Empty cell for the "Send" button
   ];
 
   cells.forEach((cellData, index) => {
@@ -157,10 +155,9 @@ borrowedAssetData.forEach((borrowedAsset) => {
       textInput.setAttribute("class", "adminMessageInput");
       textInput.type = "text";
       cell.appendChild(textInput);
-    } else if (index === 9) {
-      // Create a button for the empty column
       const sendButton = document.createElement("button");
       sendButton.textContent = "Send";
+      sendButton.setAttribute("class", "button buttonToLeft")
       sendButton.addEventListener("click", () => {
         // Find the text input in the same row as the clicked button
         const textInput = row.querySelector(".adminMessageInput");

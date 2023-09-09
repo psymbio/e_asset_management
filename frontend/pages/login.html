@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Login Page</title>
+    <title>E-Asset Management</title>
   </head>
   <body>
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
@@ -16,7 +16,7 @@
         <div class="flex flex-col justify-center p-8 md:p-14">
           <span class="mb-3 text-4xl font-bold">Welcome back</span>
           <span class="font-light text-gray-400 mb-8">
-            Welcome back! Please enter your details
+            Welcome back! Please enter your details:
           </span>
           <div class="py-4">
             <span class="mb-2 text-md">Username or Email</span>
@@ -60,7 +60,7 @@
             class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
           >
             <img
-              src="/frontend/assets/images/google.svg"
+              src="../assets/images/google.svg"
               alt="img"
               class="w-6 h-6 inline mr-2"
             />
@@ -68,24 +68,15 @@
           </button>
           <div class="text-center text-gray-400">
             Don't have an account?
-            <span class="font-bold text-black">Sign up for free</span>
+            <a class="font-bold text-black" href="signup.html">Sign up for free</a>
           </div>
         </div>
-        <!-- right side -->
         <div class="relative">
           <img
-            src="/frontend/assets/images/image.jpg"
+            src="../assets/images/login.jpg"
             alt="img"
             class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover"
           />
-          <!-- text on image -->
-          <div
-            class="absolute hidden bottom-10 right-6 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:block"
-          >
-            <span class="text-white text-xl"
-              >Team Hash It Out<br />Where Ideas Become Reality.
-            </span>
-          </div>
         </div>
       </div>
     </div>

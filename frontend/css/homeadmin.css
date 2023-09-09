@@ -64,3 +64,27 @@ thead tr th {
     text-align: left;
     margin-top: 20px;
 }
+
+#reports {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-container {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.chart-container canvas {
+    width: 100%;
+    height: auto;
+}
+
+.buttonToLeft {
+    margin: auto;
+}
+
+.adminMessageInput {
+    width: 8.5rem;
+}

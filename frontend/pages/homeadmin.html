@@ -17,11 +17,18 @@
         <br><br><br><br>
         <div id="overdueTable"></div>
     </div>
-
-    <canvas id="barChart" width="400" height="200"></canvas>
+    <div id="reports">
+        <div class="chart-container" style="margin-left:4rem;width: 30%">
+            <canvas id="barChartCategory"></canvas>
+        </div>
+        <div class="chart-container" style="margin-right:10rem;width: 40%">
+            <canvas id="barChartIsAvailable"></canvas>
+        </div>
+    </div>
     <include src="../components/footer.html"></include>
     <script type="module" src="../scripts/adminoverdue.js"></script>
-    <script type="module" src="../scripts/adminreports.js"></script>
+    <script type="module" src="../scripts/adminreportcategory.js"></script>
+    <script type="module" src="../scripts/adminreportavailable.js"></script>
 </body>
 
 </html>

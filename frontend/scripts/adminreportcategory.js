@@ -1,7 +1,22 @@
-import borrowedAssetData from "../fake_db/borrowedAsset.json" assert { type: "json" };
+let borrowedAssetData;
+
+if (localStorage.getItem('borrowedAssetData')) {
+  borrowedAssetData = JSON.parse(localStorage.getItem('borrowedAssetData'));
+} else {
+  // Fetch the JSON file using a fetch request
+  fetch('../fake_db/borrowedAsset.json')
+    .then(response => response.json())
+    .then(data => {
+      borrowedAssetData = data;
+      localStorage.setItem('borrowedAssetData', JSON.stringify(borrowedAssetData));
+      console.log(borrowedAssetData);
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
+
 import { getAssetCategory } from "./getdatautils.js";
-
-
 const categories = {};
 borrowedAssetData.forEach(item => {
     var category = getAssetCategory(item.assetId);
@@ -17,18 +32,19 @@ const labels = Object.keys(categories);
 const counts = Object.values(categories);
 console.log(labels, counts);
 // Create a bar chart
-const ctx = document.getElementById('barChart').getContext('2d');
+const ctx = document.getElementById('barChartCategory').getContext('2d');
 const barChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: labels,
         datasets: [{
             label: 'Category Counts',
             data: counts,
-            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            backgroundColor: ['#e9d5ff', '#a5f3fc', '#fbcfe8', '#fef08a'],
         }],
     },
     options: {
+        responsive: false,
         scales: {
             y: {
                 beginAtZero: true,

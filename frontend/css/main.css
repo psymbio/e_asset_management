@@ -87,3 +87,34 @@ th {
   max-width: 90%;
   margin: 20px 0;
 }
+
+.button {
+  display: inline-block;
+  width: 100%; /* Full width on small screens, will change on larger screens */
+  padding: 2px 4px; /* Adjust padding as needed */
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: #9333ea; /* Set your desired background color */
+  color: #ffffff; /* Set your desired text color */
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Define hover styles */
+.button:hover {
+  color: #7f29d8; /* Change text color on hover */
+  background-color: transparent; /* Change background color on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+/* Define active styles */
+.button:active {
+  color: #6b23a1; /* Change text color when active (button pressed) */
+  background-color: transparent; /* Change background color when active */
+}
