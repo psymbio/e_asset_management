@@ -25,7 +25,7 @@ const barChart = new Chart(ctx, {
         datasets: [{
             label: 'Category Counts',
             data: counts,
-            backgroundColor: ['blue'], // You can customize the colors
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
         }],
     },
     options: {
