@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/homeadmin.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/homeadmin.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-
-<body>
+  </head>
+  <body class="bg-gray-100 font-sans">
     <div id="formAndTable">
-        <div id="filterForm"></div>
-        <br><br><br><br>
-        <div id="overdueTable"></div>
+      <div id="filterForm"></div>
+      <br /><br /><br /><br />
+      <div id="overdueTable"></div>
     </div>
     <div id="reports">
-        <div class="chart-container" style="margin-left:4rem;width: 30%">
-            <canvas id="barChartCategory"></canvas>
-        </div>
-        <div class="chart-container" style="margin-right:10rem;width: 40%">
-            <canvas id="barChartIsAvailable"></canvas>
-        </div>
+      <div class="chart-container" style="margin-left: 4rem; width: 30%">
+        <canvas id="barChartCategory"></canvas>
+      </div>
+      <div class="chart-container" style="margin-right: 10rem; width: 40%">
+        <canvas id="barChartIsAvailable"></canvas>
+      </div>
     </div>
+
+    <!-- Add Asset Button -->
+    <div class="fixed bottom-4 right-4">
+      <a
+        href="/frontend/pages/addasset.html"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105"
+      >
+        Add Asset
+      </a>
+    </div>
+
     <include src="../components/footer.html"></include>
     <script type="module" src="../scripts/adminoverdue.js"></script>
     <script type="module" src="../scripts/adminreportcategory.js"></script>
     <script type="module" src="../scripts/adminreportavailable.js"></script>
-</body>
-
+  </body>
 </html>
