@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/homeadmin.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    
+    <div id="userInfo"></div>
+    <h1>Inbox</h1>
+    <div id="userInbox"></div>
+    <h1>Borrowed Items</h1>
+    <div id="borrowerBorrowed"></div>
+    <h1>Available Assets</h1>
+    <div id="borrowerAvailable"></div>
+    <script type="module" src="../scripts/borrowerinbox.js"></script>
+    <script type="module" src="../scripts/borrowerborrowed.js"></script>
+    <script type="module" src="../scripts/borroweravailable.js"></script>
 </body>
 </html>
