@@ -1,4 +1,3 @@
-## Assigned to: 
 ## Form data
 RULES: Everything must have a placeholder
 1. username/email

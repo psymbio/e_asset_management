@@ -1,5 +1,5 @@
 (Employee Registration Page)
-## Assigned to: 
+
 ## Form Format
 RULES: Everything must have a placeholder
 1. name
