@@ -154,6 +154,8 @@ borrowedAssetData.forEach((borrowedAsset) => {
       // Create a text input for the "Send Message" column
       const textInput = document.createElement("input");
       textInput.setAttribute("class", "adminMessageInput");
+      textInput.setAttribute("placeholder", "Enter Message");
+      textInput.setAttribute("id", "messageInput");
       textInput.type = "text";
       cell.appendChild(textInput);
       const sendButton = document.createElement("button");

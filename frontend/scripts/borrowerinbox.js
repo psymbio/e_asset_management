@@ -11,11 +11,10 @@ const userInfoDiv = document.getElementById("userInfo");
 if (currentUser) {
   // Create a template for rendering user info
   const userInfoTemplate = `
-                <div class="bg-blue-200 p-4 rounded-lg shadow-lg">
-                    <h2 class="text-xl font-semibold mb-2">Welcome ${currentUser.name}!</h2>
-                    <p class="text-gray-600">${currentUser.telephone}</p>
-                    <p class="text-gray-600">${currentUser.email}</p>
-                    <p class="text-gray-600">${currentUser.username}</p>
+                <div>
+                    <p class="text-gray-600">Telephone: ${currentUser.telephone}</p>
+                    <p class="text-gray-600">Email: ${currentUser.email}</p>
+                    <p class="text-gray-600">Username: ${currentUser.username}</p>
                 </div>
             `;
 

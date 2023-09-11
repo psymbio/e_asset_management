@@ -1,4 +1,6 @@
-/* Style for table headers */
+body {
+  background-color: #f3f4f6;
+}
 thead tr th {
   white-space: nowrap;
   padding: 0.5rem;
