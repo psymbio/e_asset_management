@@ -90,9 +90,25 @@ thead tr th {
 }
 
 .buttonToLeft {
-    margin: auto;
+    margin-left: 2.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .adminMessageInput {
     width: 8.5rem;
+}
+
+#reports-box {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#messageInput {
+    width: 100%;
 }

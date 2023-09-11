@@ -21,6 +21,12 @@ function getAssetName(assetId) {
   return asset ? asset.name : "Unknown Asset";
 }
 
+function getAssetDesc(assetId) {
+  var assetData = JSON.parse(localStorage.getItem("assetData"));
+  const asset = assetData.find((asset) => asset.id === assetId);
+  return asset ? asset.description : "Unknown Asset";
+}
+
 function getAssetCategory(assetId) {
   var assetData = JSON.parse(localStorage.getItem("assetData"));
   var categoryData = JSON.parse(localStorage.getItem("categoryData"));
@@ -39,4 +45,9 @@ function getAssetIsAvailable(assetId) {
   const asset = assetData.find((asset) => asset.id === assetId);
   return asset ? asset.isAvailable : "Unknown Asset";
 }
-export { getUsername, getUserName, getAssetName, getAssetCategory, getAssetIsAvailable };
+
+function getUserInbox(userId) {
+  var userInboxData = JSON.parse(localStorage.getItem("userInboxData"));
+  return userInboxData.filter((x) => {return x.userId === userId});
+}
+export { getUsername, getUserName, getAssetName, getAssetCategory, getAssetIsAvailable, getUserInbox, getAssetDesc };

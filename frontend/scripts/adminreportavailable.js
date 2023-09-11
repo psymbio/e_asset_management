@@ -28,6 +28,12 @@ const barChart = new Chart(ctx, {
         }],
     },
     options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Available Assets',
+            },
+        },
         responsive: false,
         scales: {
             y: {
