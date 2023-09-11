@@ -10,18 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();        
         const usernameOrEmail = document.getElementById("usernameOrEmail").value;
         const password = document.getElementById("password").value;
-        const user = userData.find(
+        var userDataDynamic;
+        if (!localStorage.getItem("userData")) {
+            userDataDynamic = userData;
+        } else {
+            userDataDynamic = JSON.parse(localStorage.getItem("userData"));
+        }
+        const user = userDataDynamic.find(
             (u) => u.username === usernameOrEmail || u.email === usernameOrEmail
         );
 
         if (user && user.password === password) {
             // Store user data in localStorage after successful login
             localStorage.setItem("loggedInUser", JSON.stringify(user));
-            localStorage.setItem("userData", JSON.stringify(userData));
-            localStorage.setItem("assetData", JSON.stringify(assetData));
-            localStorage.setItem("categoryData", JSON.stringify(categoryData));
-            localStorage.setItem("borrowedAssetData", JSON.stringify(borrowedAssetData));
-            localStorage.setItem("userInboxData", JSON.stringify(userInboxData));
+            
+            if (!localStorage.getItem("userData")) {
+                localStorage.setItem("userData", JSON.stringify(userData));
+            }
+            
+            if (!localStorage.getItem("assetData")) {
+                localStorage.setItem("assetData", JSON.stringify(assetData));
+            }
+            
+            if (!localStorage.getItem("categoryData")) {
+                localStorage.setItem("categoryData", JSON.stringify(categoryData));
+            }
+            
+            if (!localStorage.getItem("borrowedAssetData")) {
+                localStorage.setItem("borrowedAssetData", JSON.stringify(borrowedAssetData));
+            }
+            
+            if (!localStorage.getItem("userInboxData")) {
+                localStorage.setItem("userInboxData", JSON.stringify(userInboxData));
+            }
             
             if (user.role == "Admin") {
                 window.location.href = "homeadmin.html"; // Redirect to the dashboard page

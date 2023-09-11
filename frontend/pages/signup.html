@@ -17,64 +17,74 @@
           <span class="font-light text-gray-400 mb-8">
             Create a new account. Please enter your details:
           </span>
-          <div class="py-4">
-            <span class="mb-2 text-md">Email</span>
-            <input
-              type="text"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-              name="email"
-              id="email"
-            />
-          </div>
-          <div class="py-4">
-            <span class="mb-2 text-md">Password</span>
-            <input
-              type="password"
-              name="pass"
-              id="pass"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-            />
-          </div>
+          <form id="signupForm" onsubmit="handleFormSubmit()">
+            <div class="py-4">
+              <span class="mb-2 text-md">Name</span>
+              <input
+                type="text"
+                class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                name="name"
+                id="name"
+              />
+            </div>
+            <div class="py-4">
+              <span class="mb-2 text-md">Email</span>
+              <input
+                type="text"
+                class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div class="py-4">
+              <span class="mb-2 text-md">Password</span>
+              <input
+                type="password"
+                name="pass"
+                id="pass"
+                class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              />
+            </div>
 
-          <div class="py-4">
-            <span class="mb-2 text-md">Confirm Password</span>
-            <input
-              type="password"
-              name="confirm_pass"
-              id="confirm_pass"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-            />
-          </div>
-          <div class="py-4">
-            <span class="mb-2 text-md">Username</span>
-            <input
-              type="text"
-              name="Username"
-              id="Username"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-            />
-          </div>
-          <div class="py-4">
-            <span class="mb-2 text-md">Telephone</span>
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-            />
-          </div>
-          <button
-            class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
-          >
-            <img src="../assets/images/google.svg" alt="img" class="w-6 h-6 inline mr-2" />
-            Sign in with Google
-          </button>
+            <div class="py-4">
+              <span class="mb-2 text-md">Confirm Password</span>
+              <input
+                type="password"
+                name="confirm_pass"
+                id="confirm_pass"
+                class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              />
+            </div>
+            <div class="py-4">
+              <span class="mb-2 text-md">Username</span>
+              <input
+                type="text"
+                name="Username"
+                id="Username"
+                class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              />
+            </div>
+            <div class="py-4">
+              <span class="mb-2 text-md">Telephone</span>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white"
+            >
+              Submit
+            </button>
+          </form>
           <div class="text-center text-gray-400">
             Already have an account?
             <a class="font-bold text-black" href="login.html">Login</a>
           </div>
         </div>
-        <!-- {/* right side */} -->
         <div class="relative">
           <img
             src="../assets/images/login.jpg"
@@ -84,5 +94,7 @@
         </div>
       </div>
     </div>
+
+    <script type="module" src="../scripts/signup.js"></script>
   </body>
 </html>

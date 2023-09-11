@@ -92,6 +92,7 @@ function autoRefreshInbox() {
 
 // Call the renderInbox function with the initial data
 let inboxData = JSON.parse(localStorage.getItem("userInboxData"));
+console.log(inboxData);
 renderInbox(inboxData);
 autoRefreshInbox();
 
