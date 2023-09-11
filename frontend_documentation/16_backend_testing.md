@@ -11,4 +11,6 @@ Start testing the backend:
 + BORROWER: calculateLateFees()
 + BORROWER: bannedTill()
 
+Check exceptions as well.
+
 Update on the Work Distribution google sheet.
