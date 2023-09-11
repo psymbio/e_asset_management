@@ -27,6 +27,12 @@ const barChart = new Chart(ctx, {
         }],
     },
     options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Assets Category',
+            },
+        },
         responsive: false,
         scales: {
             y: {
