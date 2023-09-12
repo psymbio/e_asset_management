@@ -7,7 +7,7 @@ import userInboxData from "../fake_db/userInbox.json" assert { type: "json" };
 document.addEventListener("DOMContentLoaded", () => {
     const loginButton = document.getElementById("loginButton");
     loginButton.addEventListener("click", function (e) {
-        e.preventDefault();        
+        e.preventDefault();
         const usernameOrEmail = document.getElementById("usernameOrEmail").value;
         const password = document.getElementById("password").value;
         var userDataDynamic;
@@ -23,34 +23,34 @@ document.addEventListener("DOMContentLoaded", () => {
         if (user && user.password === password) {
             // Store user data in localStorage after successful login
             localStorage.setItem("loggedInUser", JSON.stringify(user));
-            
+
             if (!localStorage.getItem("userData")) {
                 localStorage.setItem("userData", JSON.stringify(userData));
             }
-            
+
             if (!localStorage.getItem("assetData")) {
                 localStorage.setItem("assetData", JSON.stringify(assetData));
             }
-            
+
             if (!localStorage.getItem("categoryData")) {
                 localStorage.setItem("categoryData", JSON.stringify(categoryData));
             }
-            
+
             if (!localStorage.getItem("borrowedAssetData")) {
                 localStorage.setItem("borrowedAssetData", JSON.stringify(borrowedAssetData));
             }
-            
+
             if (!localStorage.getItem("userInboxData")) {
                 localStorage.setItem("userInboxData", JSON.stringify(userInboxData));
             }
-            
+
             if (user.role == "Admin") {
                 window.location.href = "homeadmin.html"; // Redirect to the dashboard page
             } else {
                 window.location.href = "homeborrower.html"; // Redirect to the dashboard page
             }
         } else {
-            alert("Invalid username/email or password. Please try again.");
+            alert("Invalid login credentials. Please try again.");
         }
     });
 });
