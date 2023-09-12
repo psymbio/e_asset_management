@@ -22,34 +22,38 @@
             <span class="mb-2 text-md">Name</span>
             <input type="text"
               class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-              name="name" id="name" />
+              name="name" id="name" required />
           </div>
           <div class="py-4">
             <span class="mb-2 text-md">Email</span>
             <input type="text"
               class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-              name="email" id="email" />
+              name="email" id="email" type="email" required />
           </div>
           <div class="py-4">
             <span class="mb-2 text-md">Password</span>
             <input type="password" name="pass" id="pass"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500" />
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              minlength="8" maxlength="12" required />
           </div>
 
           <div class="py-4">
             <span class="mb-2 text-md">Confirm Password</span>
             <input type="password" name="confirm_pass" id="confirm_pass"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500" />
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              required />
           </div>
           <div class="py-4">
             <span class="mb-2 text-md">Username</span>
             <input type="text" name="Username" id="Username"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500" />
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              required />
           </div>
           <div class="py-4">
             <span class="mb-2 text-md">Telephone</span>
             <input type="tel" name="phone" id="phone"
-              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500" />
+              class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              required />
           </div>
           <button type="submit"
             class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white">

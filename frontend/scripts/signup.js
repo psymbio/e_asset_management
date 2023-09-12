@@ -26,12 +26,32 @@ function handleFormSubmit(event) {
     const username = document.getElementById("Username").value;
     const telephone = document.getElementById("phone").value;
 
+    //Checking if any field is empty
+    // if (!name || !email || !password || !confirmPassword || !username || !telephone) {
+    //     alert("Please fill out all the required fields.");
+    //     return;
+    // }
+
     // Validate password and confirm password
     if (password !== confirmPassword) {
         alert("Passwords do not match. Please try again.");
         return;
     }
 
+
+    //checking if the email entered is valid
+    // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // if (emailPattern != email) {
+    //     alert("Please provide a valid email format!");
+    //     return;
+    // }
+
+    // //checking for a valid password
+    // if (password.length <= 8) {
+    //     alert("The password should be minimum 8 characters.");
+    //     return;
+    // }
     // Generate a unique ID for the new user
     const userId = generateUniqueId();
 
