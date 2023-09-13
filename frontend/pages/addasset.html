@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Add Asset</title>
+    <!-- ... (your existing head content) ... -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body
-    class="class="
-    bg-gradient-to-r
-    from-white
-    to-white
-    min-h-screen
-    text-white
-    font-sans
+    class="bg-gradient-to-r from-blue-400 to-indigo-600 min-h-screen text-gray-800 font-sans"
   >
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
       <div class="bg-white shadow-lg rounded-lg p-8 mx-4 sm:w-1/2 lg:w-1/3">
-        <h1 class="text-2xl font-semibold mb-4">Add Asset</h1>
+        <h1 class="text-3xl font-semibold mb-4 text-gray-800">Add Asset</h1>
         <form id="assetForm" class="space-y-4">
           <div class="flex flex-col">
-            <label for="name" class="text-sm font-medium">Name</label>
+            <label for="name" class="text-sm font-medium text-gray-600"
+              >Name</label
+            >
             <input
               type="text"
               id="name"
               name="name"
-              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
               placeholder="Enter asset name"
               required
             />
           </div>
           <div class="flex flex-col">
-            <label for="categoryId" class="text-sm font-medium">Category</label>
+            <label for="categoryId" class="text-sm font-medium text-gray-600"
+              >Category</label
+            >
             <select
               id="categoryId"
               name="categoryId"
-              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
               required
             >
               <option value="" disabled selected>Select a category</option>
@@ -44,27 +42,27 @@
             </select>
           </div>
           <div class="flex flex-col">
-            <label for="description" class="text-sm font-medium"
+            <label for="description" class="text-sm font-medium text-gray-600"
               >Description</label
             >
             <textarea
               id="description"
               name="description"
               rows="3"
-              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
               placeholder="Enter asset description"
               required
             ></textarea>
           </div>
           <div class="flex flex-col">
-            <label for="dateAdded" class="text-sm font-medium"
+            <label for="dateAdded" class="text-sm font-medium text-gray-600"
               >Date Added</label
             >
             <input
               type="date"
               id="dateAdded"
               name="dateAdded"
-              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+              class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
               value="<?php echo date('Y-m-d'); ?>"
               required
             />
@@ -74,71 +72,79 @@
               type="checkbox"
               id="isAvailable"
               name="isAvailable"
-              class="h-4 w-4 text-blue-400 focus:ring focus:ring-blue-400"
+              class="h-4 w-4 text-blue-400 focus:ring focus:ring-blue-400 focus:outline-none"
               checked
             />
-            <label for="isAvailable" class="text-sm">Available</label>
+            <label for="isAvailable" class="text-sm text-gray-600"
+              >Available</label
+            >
           </div>
           <button
             id="addAssetButton"
             type="button"
-            class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
+            class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200 focus:outline-none"
           >
             Add Asset
           </button>
         </form>
         <!-- Add Category Section (Initially Hidden) -->
         <div id="addCategorySection" class="hidden mt-4">
-          <h2 class="text-lg font-semibold mb-2">Add Category</h2>
+          <h2 class="text-xl font-semibold mb-2 text-gray-800">Add Category</h2>
           <form id="categoryForm" class="space-y-2">
             <div class="flex flex-col">
-              <label for="categoryName" class="text-sm font-medium"
+              <label
+                for="categoryName"
+                class="text-sm font-medium text-gray-600"
                 >Category Name</label
               >
               <input
                 type="text"
                 id="categoryName"
                 name="categoryName"
-                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
                 placeholder="Enter category name"
                 required
               />
             </div>
             <div class="flex flex-col">
-              <label for="lendingPeriod" class="text-sm font-medium"
+              <label
+                for="lendingPeriod"
+                class="text-sm font-medium text-gray-600"
                 >Lending Period (in days)</label
               >
               <input
                 type="number"
                 id="lendingPeriod"
                 name="lendingPeriod"
-                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
                 placeholder="Enter lending period"
                 required
               />
             </div>
             <div class="flex flex-col">
-              <label for="lateFees" class="text-sm font-medium"
+              <label for="lateFees" class="text-sm font-medium text-gray-600"
                 >Late Fees</label
               >
               <input
                 type="number"
                 id="lateFees"
                 name="lateFees"
-                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
                 placeholder="Enter late fees"
                 required
               />
             </div>
             <div class="flex flex-col">
-              <label for="banningPeriod" class="text-sm font-medium"
+              <label
+                for="banningPeriod"
+                class="text-sm font-medium text-gray-600"
                 >Banning Period (in days)</label
               >
               <input
                 type="number"
                 id="banningPeriod"
                 name="banningPeriod"
-                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400"
+                class="py-2 px-3 border rounded-md placeholder-gray-400 focus:ring focus:ring-blue-400 focus:outline-none"
                 placeholder="Enter banning period"
                 required
               />
@@ -146,7 +152,7 @@
             <button
               id="addCategoryButton"
               type="button"
-              class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
+              class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200 focus:outline-none"
             >
               Add Category
             </button>

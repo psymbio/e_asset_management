@@ -19,5 +19,13 @@
         "lendingPeriod": 15,
         "lateFeesPerDay": 75,
         "banningPeriod": 10
+    },
+    {
+        "id": 4,
+        "name": "Create a category",
+        "lendingPeriod": 15,
+        "lateFeesPerDay": 75,
+        "banningPeriod": 10
     }
+
 ]
