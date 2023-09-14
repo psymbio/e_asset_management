@@ -126,6 +126,11 @@ assetData.forEach((asset) => {
 const submitButton = document.createElement("button");
 submitButton.type = "submit";
 submitButton.textContent = "Submit";
+submitButton.classList = ["btn"];
+
+// const backButton = document.createElement("button");
+// backButton.textContent = "Back";
+// backButton.classList = ["btn"];
 
 // Add an event listener to the form for handling form submission
 const assetSelectionForm = document.createElement("form");
@@ -136,4 +141,5 @@ assetSelectionForm.addEventListener("submit", handleFormSubmit);
 const overdueTableDiv = document.getElementById("borrowerAvailable");
 overdueTableDiv.appendChild(tableBody);
 assetSelectionForm.appendChild(submitButton);
+// overdueTableDiv.appendChild(backButton);
 overdueTableDiv.appendChild(assetSelectionForm);

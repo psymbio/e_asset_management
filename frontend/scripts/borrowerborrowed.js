@@ -20,8 +20,7 @@ const headers = [
   "Borrowing Date",
   "Overdue Status",
   "Due Date",
-  "Late Fees",
-  "Send Message",
+  "Late Fees"
 ];
 const headerRow = document.createElement("tr");
 
@@ -50,7 +49,6 @@ borrowedAssetData.forEach((borrowedAsset) => {
       borrowedAsset.overdueStatus ? "Overdue" : "Not Overdue",
       formatDate(borrowedAsset.dueDate),
       borrowedAsset.lateFees,
-      "", // Empty cell for the text input
     ];
 
     cells.forEach((cellData, index) => {
