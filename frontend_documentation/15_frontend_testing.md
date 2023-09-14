@@ -11,5 +11,6 @@ Start testing the website:
 + BORROWER: Can mark items in his/her inbox as read/unread.
 + BORROWER: Can return an asset.
 + BORROWER: Can borrow an asset.
++ BORROWER: logout and login and check if the last login date is of today.
 
 Update on the Work Distribution google sheet.

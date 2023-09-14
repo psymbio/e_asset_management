@@ -27,7 +27,7 @@
 ### Backend
 TODO: Backend structure needs slight rectification
 ```
-
+|-database_seed.sql # use this to seed the database
 ```
 
 ### Communication and Documentation
