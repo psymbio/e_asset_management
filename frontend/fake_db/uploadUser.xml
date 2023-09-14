@@ -1,0 +1,16 @@
+<users>
+  <user>
+    <name>John Doe</name>
+    <email>johndoe@eample.com</email>
+    <password>12345678</password>
+    <username>johndoe123889</username>
+    <telephone>123-456-7890</telephone>
+  </user>
+  <user>
+    <name>Jane Smith</name>
+    <email>janesmith@exmple.com</email>
+    <password>password123</password>
+    <username>janesmit456</username>
+    <telephone>987-654-3210</telephone>
+  </user>
+</users>
