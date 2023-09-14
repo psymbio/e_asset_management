@@ -80,16 +80,61 @@ email: john.doe@example.com
 password: Password@123
 ```
 4. Or you can create your own account.
+
 ### Admin Login
+You can view the Overdue Assets table and the Reports
+![](frontend_images/01_overdue_assets.png)
+![](frontend_images/02_reports.png)
+
+You can send the user a message
+![](frontend_images/03_send_message.png)
+
+You can filter the overdue asset table
+![](frontend_images/04_filter_data.png)
+
+You can import users
+![](frontend_images/05_import_users.png)
+
+You can add an asset and category
+![](frontend_images/06_add_asset_category.png)
 
 ### Borrower Login
+You can view your information, when you last logged in
+![](frontend_images/07_user_info.png)
 
+You can view your inbox
+![](frontend_images/08_user_inbox.png)
+
+You can view the assets you borrowed
+![](frontend_images/09_borrowed_assets.png)
+
+You can view all the available assets
+![](frontend_images/10_available_assets.png)
+
+You can borrow an asset
+![](frontend_images/11_borrow_asset.png)
+
+You can return an asset
+![](frontend_images/12_return_asset.png)
 
 ## Backend Walkthrough
 TODO
 
 ## Frontend Testing
-TODO
+| S. no. | Role     | Feature                                     | Input                                                            | Output                                         |
+|--------|----------|---------------------------------------------|------------------------------------------------------------------|------------------------------------------------|
+| 1      | Admin    | Login                                       | email: admin@example.com password: admin                         | ![](frontend_images/01_overdue_assets.png)     |
+| 2      | Admin    | Send email                                  | Message to John Doe: send this back                              | ![](frontend_images/03_send_message.png)       |
+| 3      | Admin    | Add asset                                   | Add new asset                                                    | ![](frontend_images/06_add_asset_category.png) |
+| 4      | Admin    | Overdue Table                               | No input                                                         | ![](frontend_images/01_overdue_assets.png)     |
+| 5      | Admin    | Reports                                     | No input                                                         | ![](frontend_images/02_reports.png)            |
+| 6      | Admin    | Import Users                                | uploadUser.xml                                                   | ![](frontend_images/05_import_users.png)       |
+| 7      | Borrower | Login                                       | email: john.doe@example.com password: Password@123               |                                                |
+| 8      | Borrower | See user information                        | No input                                                         | ![](frontend_images/07_user_info.png)          |
+| 9      | Borrower | See inbox and mark messages read and unread | Mark messages as unread and read See new messages from the admin | ![](frontend_images/08_user_inbox.png)         |
+| 10     | Borrower | See borrowed assets and available assets    | No input                                                         | ![](frontend_images/09_borrowed_assets.png)    |
+| 11     | Borrower | Borrow or return an asset                   | Checkbox input to borrow or return assets                        | ![](frontend_images/11_borrow_asset.png)       |
+|        |          |                                             |                                                                  |                                                |
 
 ## Backend Testing
 TODO
