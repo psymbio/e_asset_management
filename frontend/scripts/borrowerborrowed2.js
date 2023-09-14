@@ -33,23 +33,8 @@ function handleFormSubmit(event) {
                     asset.isAvailable = true;
                 }
             });
-
-            // // Create a new entry in borrowedAssetData
-            // const borrowedAssetEntry = {
-            //     id: generateUniqueId(JSON.parse(localStorage.getItem("borrowedAssetData"))),
-            //     assetId: assetId,
-            //     userId: JSON.parse(localStorage.getItem("loggedInUser")).id,
-            //     borrowingDatetime: formattedDate,
-            //     overdueStatus: false,
-            //     dueDate: "2023-10-12",
-            //     lateFees: 0,
-            // };
-
-            // // Add the entry to borrowedAssetData
-            // const borrowedAssetData = JSON.parse(localStorage.getItem("borrowedAssetData")) || [];
-            // borrowedAssetData.push(borrowedAssetEntry);
             const updatedBorrowedAssetData = borrowedAssetData.filter((borrowedAsset) => {
-                return borrowedAsset.assetId !== assetId || borrowedAsset.userId !== JSON.parse(localStorage.getItem("loggedInUser")).id;
+                return borrowedAsset.assetId !== assetId;
             });
             localStorage.setItem("borrowedAssetData", JSON.stringify(updatedBorrowedAssetData));
             localStorage.setItem("assetData", JSON.stringify(assetData));

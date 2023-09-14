@@ -1,4 +1,4 @@
-# E-Asset Management
+# Asset Vault
 
 ## Tech Stack Used
 ![Tech Stack](important_images/tech_stack.png)
