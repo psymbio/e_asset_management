@@ -73,7 +73,7 @@ TODO: Backend structure needs slight rectification
 
 In essence, the system is a web application enabling user and asset management, with functionalities to sign up, log in, manage assets, and view reports, using a combination of JSON files and localStorage.
 
-## Usage
+## Frontend Usage
 
 1. Go here: https://psymbio.github.io/e_asset_management/frontend/pages/
 2. To login as Admin use the credentials
@@ -88,6 +88,14 @@ password: Password@123
 ```
 4. Or you can create your own account.
 
+## Backend Usage
+
+TODO
+
 ## Frontend Testing
 
+TODO
+
 ## Backend Testing
+
+TODO
