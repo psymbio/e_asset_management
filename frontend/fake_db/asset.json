@@ -29,6 +29,22 @@
         "categoryId": 1,
         "description": "Dell XPS 15",
         "dateAdded": "2023-09-01",
-        "isAvailable": false
+        "isAvailable": true
+    },
+    {
+        "id": 5,
+        "name": "Laptop 373884",
+        "categoryId": 1,
+        "description": "Dell XPS 15",
+        "dateAdded": "2023-09-01",
+        "isAvailable": true
+    },
+    {
+        "id": 6,
+        "name": "Laptop 33994",
+        "categoryId": 1,
+        "description": "Dell XPS 15",
+        "dateAdded": "2023-09-01",
+        "isAvailable": true
     }
 ]
