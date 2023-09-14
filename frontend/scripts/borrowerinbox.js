@@ -7,7 +7,6 @@ console.log(currentUser.id);
 
 const userInfoDiv = document.getElementById("userInfo");
 
-// Check if currentUser exists
 if (currentUser) {
   // Create a template for rendering user info
   const userInfoTemplate = `
@@ -15,6 +14,7 @@ if (currentUser) {
                     <p class="text-gray-600">Telephone: ${currentUser.telephone}</p>
                     <p class="text-gray-600">Email: ${currentUser.email}</p>
                     <p class="text-gray-600">Username: ${currentUser.username}</p>
+                    <p class="text-gray-600">Last Login: ${currentUser.lastLogin}</p>
                 </div>
             `;
 
@@ -56,7 +56,6 @@ function renderInbox(inboxData) {
         button.classList.add("button"); // Add your button class here
         button.textContent = message.statusRead ? "Mark as Unread" : "Mark as Read";
         button.addEventListener("click", () => {
-          // Toggle message status between read and unread
           message.statusRead = !message.statusRead;
   
           // Update button text based on the new status
@@ -68,9 +67,10 @@ function renderInbox(inboxData) {
   
         const messageText = document.createElement("span");
         messageText.textContent = message.message;
-  
-        messageDiv.appendChild(button);
         messageDiv.appendChild(messageText);
+        messageDiv.appendChild(document.createElement("br"));
+        messageDiv.appendChild(document.createElement("br"));
+        messageDiv.appendChild(button);
   
         userInbox.appendChild(messageDiv);
       }

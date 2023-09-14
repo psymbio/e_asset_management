@@ -6,7 +6,8 @@
         "telephone": "555-123-4567",
         "email": "john.doe@example.com",
         "username": "johndoe",
-        "password": "Password@123"
+        "password": "Password@123",
+        "lastLogin": "12-09-2023"
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "telephone": "555-987-6543",
         "email": "jane.smith@example.com",
         "username": "janesmith",
-        "password": "S73@1pass"
+        "password": "S73@1pass",
+        "lastLogin": "12-09-2023"
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "telephone": "555-555-5555",
         "email": "admin@example.com",
         "username": "admin",
-        "password": "admin"
+        "password": "admin",
+        "lastLogin": "12-09-2023"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "telephone": "555-111-2222",
         "email": "katherine@example.com",
         "username": "katherine",
-        "password": "Kathy178@"
+        "password": "Kathy178@",
+        "lastLogin": "12-09-2023"
     },
     {
         "id": 5,
@@ -42,30 +46,7 @@
         "telephone": "555-123-4567",
         "email": "john.doe@example.com",
         "username": "johndoe",
-        "password": "Password@123"
-    },
-    {
-        "name": "Jane Smith",
-        "role": "Borrower",
-        "telephone": "555-987-6543",
-        "email": "jane.smith@example.com",
-        "username": "janesmith",
-        "password": "S73@1pass"
-    },
-    {
-        "name": "Admin User",
-        "role": "Admin",
-        "telephone": "555-555-5555",
-        "email": "admin@example.com",
-        "username": "admin",
-        "password": "admin"
-    },
-    {
-        "name": "Katherine Walsby",
-        "role": "Borrower",
-        "telephone": "555-111-2222",
-        "email": "katherine@example.com",
-        "username": "katherine",
-        "password": "Kathy178@"
+        "password": "Password@123",
+        "lastLogin": "12-09-2023"
     }
 ]

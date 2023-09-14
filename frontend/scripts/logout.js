@@ -1,29 +1,23 @@
-function downloadJsonData(data, filename) {
-  const jsonData = JSON.stringify(data);
-
-  // Create a blob with the JSON data
-  const blob = new Blob([jsonData], { type: "application/json" });
-
-  // Create a URL for the blob
-  const url = URL.createObjectURL(blob);
-
-  // Create a download link and trigger the download
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-
-  // Clean up the URL object
-  URL.revokeObjectURL(url);
-}
-
 function logout() {
-  const userInboxData = localStorage.getItem("userInboxData");
-  downloadJsonData(userInboxData, "userInbox.json");
+  var userData = JSON.parse(localStorage.getItem("userData"));
+  var currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const index = userData.findIndex((u) => u.id === currentUser.id);
 
-  const assetData = localStorage.getItem("assetData");
-  downloadJsonData(assetData, "asset.json");
+  if (index !== -1) {
+    // Update the lastLogin property of the user to the current date
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getFullYear()}`;
+    userData[index].lastLogin = formattedDate;
 
-  const borrowedAsset = localStorage.getItem("borrowedAsset");
-  downloadJsonData(borrowedAsset, "borrowedAsset.json");
+    // Save the updated user data back to localStorage
+    localStorage.setItem("userData", JSON.stringify(userData));
+
+    // Update the currently logged-in user object in localStorage
+    localStorage.setItem("loggedInUser", JSON.stringify(userData[index]));
+
+    console.log("Last login updated to: " + formattedDate);
+  } else {
+    console.log("User not found in userData.");
+  }
+  window.location.href = "login.html";
 }
