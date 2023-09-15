@@ -1,4 +1,5 @@
 # Asset Vault
+The Asset Vault is a web-based e-asset management system designed to track various assets like Laptops, Books, Mobiles, and devices. It provides features for monitoring asset availability, location, borrower information, and transaction history. The system prioritizes security, extensibility, and compliance, offering user authentication, role-based access control, and robust documentation. It establishes a database for asset details and transactions, implements secure authentication, creates a user-friendly web interface, and develops features for asset management and search. The system is designed to accommodate new asset types and attributes while enhancing security through access controls, encryption, and compliance measures.
 
 ## Tech Stack Used
 ![Tech Stack](important_images/tech_stack.png)
