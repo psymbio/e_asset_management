@@ -28,8 +28,20 @@
    |---scripts # js files of the website
 ```
 ### Backend
-TODO: Backend structure needs slight rectification
 ```
+|-EAssetManagement
+   |---EAssetManagement
+   |-----bin
+   |-----src
+   |-------com
+   |---------easset
+   |-----------entity # all the beans
+   |-----------exceptions # all the possible exceptions of the program
+   |-----------service # handles controlling the database
+   |-----------storage # talks to the database
+   |-----------utils # filter function interfaces
+   |-----------view # the main exists here
+   |---bin
 |-database_seed.sql # use this to seed the database
 ```
 ### Communication and Documentation
