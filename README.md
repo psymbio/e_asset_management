@@ -118,7 +118,12 @@ You can return an asset
 ![](frontend_images/12_return_asset.png)
 
 ## Backend Walkthrough
-TODO
+1. Change the credentials in the com.easset.storage inside Credentials.java as per your system's database.
+2. Seed your database using `database_seed.sql`
+3. Login as Admin with userId = 1
+4. Login as Borrower with userId = 2
+5. You can borrow assets, create assets and categories, create users as an admin.
+6. You can borrow assets as a user.
 
 ## Frontend Testing
 | S. no. | Role     | Feature                                     | Input                                                            | Output                                         |
@@ -137,4 +142,9 @@ TODO
 |        |          |                                             |                                                                  |                                                |
 
 ## Backend Testing
-TODO
+| S.No |   Role   |       Function       |            Output           |
+|:----:|:--------:|:--------------------:|:---------------------------:|
+|   1  |   Admin  |  Get all categories  |  ![](backend_images/ss1.jpeg) |
+|   2  |   Admin  |   Add new category   | ![](backend_images/ss2.jpeg) |
+|   3  | Borrower |    List all assets   | ![](backend_images/ss3.jpeg) |
+|   4  | Borrower | Get available assets | ![](backend_images/ss4.jpeg) |
